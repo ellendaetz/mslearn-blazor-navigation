@@ -2,13 +2,14 @@
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
 @inject OrderState OrderState
+
 @layout MainLayout
 
 <div class="main">
   @*<h1>Blazing Pizzas</h1>*@
   <ul class="pizza-cards">
     @if (specials != null)
-    {
+    { 
       @foreach (var special in specials)
       {
           <li @onclick="@(() => OrderState.ShowConfigurePizzaDialog(special))" style="background-image: url('@special.ImageUrl')">
@@ -38,7 +39,7 @@
             <h2>Your order</h2>
 
             @foreach (var configuredPizza in order.Pizzas)
-            {
+            { 
               <div class="cart-item">
                   <a @onclick="@(() => OrderState.RemoveConfiguredPizza(configuredPizza))" class="delete-item">x</a>
                   <div class="title">@(configuredPizza.Size)" @configuredPizza.Special.Name</div>
