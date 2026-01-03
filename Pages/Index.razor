@@ -2,9 +2,10 @@
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
 @inject OrderState OrderState
+@layout MainLayout
 
 <div class="main">
-  <h1>Blazing Pizzas</h1>
+  @*<h1>Blazing Pizzas</h1>*@
   <ul class="pizza-cards">
     @if (specials != null)
     {
@@ -15,7 +16,7 @@
           <span class="title">@special.Name</span>
           @special.Description
           <span class="price">@special.GetFormattedBasePrice()</span>
-          </div>
+          </div>    
         </li>
       }
     }
